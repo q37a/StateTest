@@ -16,7 +16,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import xyz.novality.dev.q37a.Main;
 
-public class GameEventHandler implements Listener {
+public class BlockBreakEventHandler implements Listener {
 	
 	private Main plugin;
 	private ConcurrentHashMap<UUID, Double> pbreak = new ConcurrentHashMap<UUID, Double>();
@@ -33,11 +33,11 @@ public class GameEventHandler implements Listener {
 				
 				for (UUID u : pbreak.keySet()) {
 					if (pbreak.get(u) > 0) {
-						Bukkit.getPlayer(u).sendActionBar("§d" + Main.round(pbreak.get(u).doubleValue(), 2) + "s");
+						Bukkit.getPlayer(u).sendActionBar("Â§d" + Main.round(pbreak.get(u).doubleValue(), 2) + "s");
 						pbreak.replace(u, pbreak.get(u)-0.05);
 					}
 					else {
-						Bukkit.getPlayer(u).sendActionBar("§d ");
+						Bukkit.getPlayer(u).sendActionBar("Â§d ");
 						pbreak.remove(u);
 					}
 				}
