@@ -29,7 +29,7 @@ public class Main extends JavaPlugin {
 		log("Plugin author - Q37A");
 		
 		//events
-		new GameEventHandler(this);
+		//new BlockBreakEventHandler(this); // OPTIONAL - Old event handler for block break mechanic
 	}
 	
 }
