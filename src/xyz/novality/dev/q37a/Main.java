@@ -6,7 +6,7 @@ import java.util.Random;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import xyz.novality.dev.q37a.events.GameEventHandler;
+import xyz.novality.dev.q37a.events.BlockBreakEventHandler;
 
 public class Main extends JavaPlugin {
 
