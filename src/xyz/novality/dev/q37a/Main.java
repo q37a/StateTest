@@ -6,7 +6,8 @@ import java.util.Random;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import xyz.novality.dev.q37a.events.BlockBreakEventHandler;
+import xyz.novality.dev.q37a.commands.SpawnGunCmd;
+import xyz.novality.dev.q37a.events.GameEventHandler;
 
 public class Main extends JavaPlugin {
 
@@ -30,6 +31,10 @@ public class Main extends JavaPlugin {
 		
 		//events
 		//new BlockBreakEventHandler(this); // OPTIONAL - Old event handler for block break mechanic
+		new GameEventHandler(this); //add gun functionality
+		
+		//commands
+		new SpawnGunCmd(this); //add a way to receive the rifle
 	}
 	
 }

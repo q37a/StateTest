@@ -21,7 +21,7 @@ public class BlockBreakEventHandler implements Listener {
 	private Main plugin;
 	private ConcurrentHashMap<UUID, Double> pbreak = new ConcurrentHashMap<UUID, Double>();
 	
-	public GameEventHandler(Main plugin) {
+	public BlockBreakEventHandler(Main plugin) {
 		
 		this.plugin = plugin;
 		plugin.getServer().getPluginManager().registerEvents(this, this.plugin);
@@ -33,18 +33,18 @@ public class BlockBreakEventHandler implements Listener {
 				
 				for (UUID u : pbreak.keySet()) {
 					if (pbreak.get(u) > 0) {
-						Bukkit.getPlayer(u).sendActionBar("Â§d" + Main.round(pbreak.get(u).doubleValue(), 2) + "s");
+						Bukkit.getPlayer(u).sendActionBar("§d" + Main.round(pbreak.get(u).doubleValue(), 2) + "s");
 						pbreak.replace(u, pbreak.get(u)-0.05);
 					}
 					else {
-						Bukkit.getPlayer(u).sendActionBar("Â§d ");
+						Bukkit.getPlayer(u).sendActionBar("§d ");
 						pbreak.remove(u);
 					}
 				}
 				
 			}
 			
-		}.runTaskTimer(this.plugin, 0, 2);
+		}.runTaskTimer(this.plugin, 0, 1);
 		
 	}
 	
@@ -86,6 +86,7 @@ public class BlockBreakEventHandler implements Listener {
 				break;
 			case YELLOW_STAINED_GLASS: // 20% opacity block
 				mat = Material.AIR; // 0% opacity block
+				break;
 			default:
 				return;
 			}
